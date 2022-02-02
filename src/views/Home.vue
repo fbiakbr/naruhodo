@@ -48,7 +48,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/best-products")
+      .get("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/best-products")
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log(error))
   },

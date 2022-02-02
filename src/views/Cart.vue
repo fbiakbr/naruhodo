@@ -124,12 +124,12 @@ export default {
     },
     deleteCart(id) {
       axios
-        .delete("http://localhost:3000/carts/" + id)
+        .delete("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/carts/" + id)
         .then(() => {
           this.$vToastify.success("Success Delete Cart Item");
 
           axios
-            .get("http://localhost:3000/carts")
+            .get("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/carts")
             .then((response) => this.setCarts(response.data))
             .catch((error) => console.log(error));
         })
@@ -139,11 +139,11 @@ export default {
       if (this.orders.full_name && this.orders.phone_number) {
         this.orders.carts = this.carts;
         axios
-          .post("http://localhost:3000/orders", this.orders)
+          .post("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/orders", this.orders)
           .then(() => {
             this.carts.map(function (items) {
               return axios
-                .delete("http://localhost:3000/carts/" + items.id)
+                .delete("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/carts/" + items.id)
                 .catch((error) => console.log(error));
             });
             this.$router.push("/checkout-success");
@@ -159,7 +159,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/carts")
+      .get("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/carts")
       .then((response) => this.setCarts(response.data))
       .catch((error) => console.log(error));
   },

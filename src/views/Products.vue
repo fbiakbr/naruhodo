@@ -58,14 +58,14 @@ export default {
     },
     searchProduct() {
       axios
-        .get("http://localhost:3000/products?q=" + this.search)
+        .get("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/products?q=" + this.search)
         .then((response) => this.setProduct(response.data))
         .catch((error) => console.log(error));
     },
   },
   mounted() {
     axios
-      .get("http://localhost:3000/products")
+      .get("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/products")
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log(error));
   },

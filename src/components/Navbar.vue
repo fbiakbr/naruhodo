@@ -54,7 +54,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/carts")
+      .get("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/carts")
       .then((response) => this.setQtys(response.data))
       .catch((error) => console.log(error))
   }

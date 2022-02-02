@@ -90,7 +90,7 @@ export default {
       if (this.order.qty) {
         this.order.products = this.product;
         axios
-          .post("http://localhost:3000/carts", this.order)
+          .post("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/carts", this.order)
           .then(() => {
             this.$router.push("/cart");
             this.$vToastify.success("Added to Cart");
@@ -106,7 +106,7 @@ export default {
 
   mounted() {
     axios
-      .get("http://localhost:3000/products/" + this.$route.params.id)
+      .get("https://my-json-server.typicode.com/fbiakbr/fbiakbr.github.io/products/" + this.$route.params.id)
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log(error));
   },
